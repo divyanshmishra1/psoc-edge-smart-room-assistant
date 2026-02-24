@@ -1,0 +1,18 @@
+[
+    {
+        "asset-name": "async-transfer",
+        "locked-commit": "release-v1.1.0"
+    },
+    {
+        "asset-name": "cmsis",
+        "locked-commit": "release-v6.1.0"
+    },
+    {
+        "asset-name": "device-db",
+        "locked-commit": "release-v4.35.0"
+    },
+    {
+        "asset-name": "mtb-srf",
+        "locked-commit": "release-v1.1.0"
+    }
+]

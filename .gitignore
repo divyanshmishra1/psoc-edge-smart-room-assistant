@@ -1,0 +1,12 @@
+build/
+Debug/
+Release/
+*_build/
+bsps/
+libs/
+.mtbqueryapi
+mtb_shared/
+*.log
+*.elf
+*.hex
+*.bin

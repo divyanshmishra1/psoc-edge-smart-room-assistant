@@ -1,0 +1,29 @@
+turn on light
+turn on the light
+switch on light
+switch on the light
+turn off light
+turn off the light
+switch off light
+switch off the light
+turn on projector
+turn on the projector
+turn off projector
+turn off the projector
+switch on projector
+switch on the projector
+switch off projector
+switch off the projector
+turn on ac
+turn on the ac
+turn off ac
+turn off the ac
+switch on ac
+switch on the ac
+switch off ac
+switch off the ac
+start the meeting
+stop the meeting
+set temperature <numbers30> {degree,degrees}
+book room <numbers9> {hour,hours}
+book room <numbers0to100by5> {minute,minutes}
