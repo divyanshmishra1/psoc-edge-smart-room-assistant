@@ -87,10 +87,10 @@ void command_handler_init(void) {
   printf("%s\r\n\r\n", SEPARATOR_LINE);
 
   printf("Device States:\r\n");
-  printf("  Light     : OFF\r\n");
-  printf("  Projector : OFF\r\n");
-  printf("  AC        : OFF (Temp: %d°C)\r\n", current_temp);
-  printf("  Meeting   : NOT ACTIVE\r\n\r\n");
+  printf("  Light     : OFF  (Green LED)\r\n");
+  printf("  Projector : OFF  (UART)\r\n");
+  printf("  AC        : OFF  (Temp: %d°C, UART)\r\n", current_temp);
+  printf("  Meeting   : NOT ACTIVE (UART)\r\n\r\n");
 
   command_handler_print_commands();
 }
@@ -456,11 +456,14 @@ static void handle_start_meeting(void) {
 
   meeting_state = DEVICE_ON;
 
-  /* Use Blue LED solid ON to indicate meeting is active */
-  led_pwm_set_brightness(LED_PWM_BLUE_LED, LED_PWM_MAX_BRIGHTNESS);
-  led_pwm_on(LED_PWM_BLUE_LED);
+  /*
+   * NOTE: Blue LED is owned by the voice-assistant state machine in main.c
+   * (solid = waiting for wake word, breathing = waiting for command).
+   * Do NOT drive it here — it would be overridden on the next audio frame.
+   * Meeting status is reported via UART only.
+   */
 
-  printf("[MEETING] --> STARTED (Blue LED solid ON)\r\n");
+  printf("[MEETING] --> STARTED\r\n");
 }
 
 static void handle_stop_meeting(void) {
@@ -471,10 +474,12 @@ static void handle_stop_meeting(void) {
 
   meeting_state = DEVICE_OFF;
 
-  /* Turn off Blue LED to indicate meeting ended */
-  led_pwm_off(LED_PWM_BLUE_LED);
+  /*
+   * NOTE: Blue LED is owned by the voice-assistant state machine in main.c.
+   * Meeting status is reported via UART only.
+   */
 
-  printf("[MEETING] --> STOPPED (Blue LED off)\r\n");
+  printf("[MEETING] --> STOPPED\r\n");
 }
 
 /*******************************************************************************

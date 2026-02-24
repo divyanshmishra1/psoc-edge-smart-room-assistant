@@ -346,7 +346,7 @@ static void print_voice_assistant_status(cy_rslt_t result, va_event_t event,
     }
   }
 
-  /* Update the Green LED state */
+  /* Update the Blue LED state (voice-assistant status indicator) */
   if (breathing_counter == 0) {
     led_pwm_set_brightness(LED_PWM_BLUE_LED, LED_PWM_MAX_BRIGHTNESS);
     led_pwm_on(LED_PWM_BLUE_LED);

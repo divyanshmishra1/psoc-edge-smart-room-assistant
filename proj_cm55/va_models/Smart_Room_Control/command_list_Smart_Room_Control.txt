@@ -8,18 +8,18 @@ switch off light
 switch off the light
 turn on projector
 turn on the projector
-turn off projector
-turn off the projector
 switch on projector
 switch on the projector
+turn off projector
+turn off the projector
 switch off projector
 switch off the projector
 turn on ac
 turn on the ac
-turn off ac
-turn off the ac
 switch on ac
 switch on the ac
+turn off ac
+turn off the ac
 switch off ac
 switch off the ac
 start the meeting
